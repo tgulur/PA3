@@ -28,7 +28,7 @@ for i = 1:points
     if (x_num(i) == 0 && y_num(i) == 0)
         continue
     else 
-        plot(x_num,y_num)
+        plot(x_num,y_num, 'Color', 'k')
     end 
 
     
