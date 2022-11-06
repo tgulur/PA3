@@ -39,6 +39,18 @@ end
 
 % figure(2)
 
-% Resulting curve returned
-result_curve = awesome_curve_fit(theta,rho);
-% R = curve(result_curve)
+% Resulting curve  function returned
+curve_fit = awesome_curve_fit(theta,rho);
+
+% Getting radius values for the curve 
+figure(2)
+R = curve_fit(theta); 
+
+% polarplot(theta,R)
+
+
+
+
+
+
+
