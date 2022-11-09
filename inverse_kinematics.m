@@ -97,7 +97,7 @@ figure();
 movie(F, 1, 100);
 
 %%
-% One of the biggest challenges we faced in this was definitely in
+% One of the biggest challenges we faced in this was in
 % smoothing out the algorithm to fit the curve. We ended up taking a unique
 % approach in utilizing polar coordinates in order to draw the spline curve
 % which allowed for a simplification of calculations. These simplifications
@@ -108,4 +108,4 @@ movie(F, 1, 100);
 % code so we can work on it in real time as well as make sure code
 % collisions wouldn't occur (https://github.com/tgulur/PA3). Finally, we attempted to break the code up
 % more by utilizing MatLab functions to do the curve algorithm, circle
-% plotting, invesrse kinematics, and link plotting
+% plotting, inverse kinematics, and link plotting
