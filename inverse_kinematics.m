@@ -74,15 +74,23 @@ plot_circle(0,0,1.5);
 clf
 
 %animating the path of the robot
+
+frames = length(j1);
+F(frames) = struct('cdata', [], 'colormap', []); %initialize Frames for movie
+
 for i=1:length(j1)
     
     plot(R.*cos(T), R.*sin(T));
     plot_circle(0,0,0.5);
     plot_circle(0,0,1.5);
     plot_links(j1(i),j2(i));
-    drawnow
+    
+    F(i) = getFrame();  % Capture the current plot as a animation frame
     
 end
 
+% Play back the animation
+figure();
+movie(F, 1, 100);
 
 
