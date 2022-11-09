@@ -1,4 +1,4 @@
-function [joint_angles] = spline_disc(theta, R)
+function [j1, j2] = spline_disc(theta, R)
 %function takes a series of spline angle and theta values (polar) and
 %uses these values to generate a series of corresponding joint variable
 %values
@@ -17,9 +17,10 @@ j1 = zeros(sz); %Initializes joint variable vectors with zeros
 j2 = zeros(sz);
 
 for i = 1:length(angles) %Repeating loop that performs inverse kinematic relation for each polar coordinate (r, theta)
-j1(i) = arctan((radii(i)*sin(angles(i)))/(radii(i)*cos(angles(i)))) - arccos((L2^2 - L1^2 - r1^2)/(-2 * L1 * r1));
+j1(i) = atan((radii(i)*sin(angles(i)))/(radii(i)*cos(angles(i)))) - acos((L2^2 - L1^2 - r1(i)^2)/(-2 * L1 * r1(i)));
 
-j2(i) = pi - arccos((r1^2 - L1^2 - L2^2)/(-2 * L1 * L2))
+j2(i) = pi - acos((r1(i)^2 - L1^2 - L2^2)/(-2 * L1 * L2));
 end
-
-joint_angles = [j1 j2] %final output array of j1 and j2
+j1 = transpose(j1);
+j2 = transpose(j2);
+% joint_angles = [j1 j2]; %final output array of j1 and j2

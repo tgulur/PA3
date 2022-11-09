@@ -43,7 +43,7 @@ end
 [T, R]  = awesome_curve_fit(theta,rho);
 
 % Getting radius values for the curve 
- 
+[j1, j2] =  spline_disc(T, R);
 
 % polarplot(theta,R)
 
