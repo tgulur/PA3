@@ -83,7 +83,7 @@ F(frames) = struct('cdata', [], 'colormap', []); %initialize Frames for movie
 
 for i=1:length(j1)
     
-    plot(R.*cos(T), R.*sin(T));
+    plot(R.*cos(T), R.*sin(T), '-', x_num, y_num, 'x');
     plot_circle(0,0,0.5);
     plot_circle(0,0,1.5);
     plot_links(j1(i),j2(i));
