@@ -69,12 +69,17 @@ plot_circle(0,0,1.5);
  
 
 % Getting radius values for the curve 
-% [j1, j2] =  spline_disc(T, R);
+[j1, j2] =  spline_disc(T, R);
+
+clf
 
 %animating the path of the robot
-for i=1:length(j1)/4
-    clf
-    plot_links(j1(i*4),j2(i*4));
+for i=1:length(j1)
+    
+    plot(R.*cos(T), R.*sin(T));
+    plot_circle(0,0,0.5);
+    plot_circle(0,0,1.5);
+    plot_links(j1(i),j2(i));
     drawnow
 end
 

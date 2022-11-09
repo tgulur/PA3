@@ -4,6 +4,6 @@ function h = plot_circle(x,y,r) % Function to plot a circle
 hold on
 th = 0:pi/50:2*pi; %  Array of eqns
 xunit = r * cos(th) + x; % X val
-yunit = r * sin(th) + y; % Y val
-h = plot(xunit, yunit); % Plotting circle 
+yunit = r * sin(th) + y;
+h = plot(xunit, yunit);
 hold off
