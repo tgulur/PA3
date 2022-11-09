@@ -8,7 +8,7 @@ function [j1, j2] = spline_disc(theta, R)
 
 % radii = R; %array of corresponding radii
 
-[x, y] = pol2cart(theta, R)
+[x, y] = pol2cart(theta, R);
 L1 = 1; %Link 1
 L2 = 0.5; %Link 2 length
 r1 = sqrt(x.^2 + y.^2); %Radial distance from base (I didn't need another variable but I am too lazy to change the formula :))
@@ -18,9 +18,9 @@ j1 = zeros(sz); %Initializes joint variable vectors with zeros
 j2 = zeros(sz);
 
 for i = 1:length(theta) %Repeating loop that performs inverse kinematic relation for each polar coordinate (r, theta)
-j1(i) = atan2(y(i),x(i)) - acos((L2^2-L1^2-r1(i)^2)/(-2*L1*r1(i)));
+j1(i) = theta(i) - acos((x(i)^2+y(i)^2+L1^2-L2^2)/(2*L1*sqrt(x(i)^2+y(i)^2)));
 
-j2(i) = pi - acos((r1(i)^2-L1^2-L2^2)/(-2*L1*L2));
+j2(i) = pi - acos((L1^2+L2^2-x(i)^2-y(i)^2)/(2*L1*L2));
 end
 % j1 = transpose(j1);
 % j2 = transpose(j2);
