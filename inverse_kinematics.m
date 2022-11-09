@@ -81,6 +81,7 @@ for i=1:length(j1)
     plot_circle(0,0,1.5);
     plot_links(j1(i),j2(i));
     drawnow
+    
 end
 
 
