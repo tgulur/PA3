@@ -1,3 +1,6 @@
+%% PA3 - Inverse Kinematics - Atish Ananth, Tejas Gulur, Max Lemon, James Farrell
+
+
 % Close everything 
 clc
 clear
@@ -85,7 +88,7 @@ for i=1:length(j1)
     plot_circle(0,0,1.5);
     plot_links(j1(i),j2(i));
     
-    F(i) = getFrame();  % Capture the current plot as a animation frame
+    F(i) = getframe();  % Capture the current plot as a animation frame
     
 end
 
@@ -93,4 +96,16 @@ end
 figure();
 movie(F, 1, 100);
 
-
+%%
+% One of the biggest challenges we faced in this was definitely in
+% smoothing out the algorithm to fit the curve. We ended up taking a unique
+% approach in utilizing polar coordinates in order to draw the spline curve
+% which allowed for a simplification of calculations. These simplifications
+% carried on into the rest of the calculations that we performed, including
+% the inverse kinematics! Another challenge that we faced was working
+% together and sending each other code, but we ended up using GitHub and
+% used GitHub desktop to keep track of changes, commits, and changes to
+% code so we can work on it in real time as well as make sure code
+% collisions wouldn't occur. Finally, we attempted to break the code up
+% more by utilizing MatLab functions to do the curve algorithm, circle
+% plotting, invesrse kinematics, and link plotting

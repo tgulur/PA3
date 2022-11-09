@@ -25,7 +25,7 @@ polarP_raw = [theta_data, R_data];
 polarP = sortrows(polarP_raw);
 
 % Find theta range for data points
-theta = min(polarP(:,1)):0.001:max(polarP(:,1));
+theta = min(polarP(:,1)):0.01:max(polarP(:,1));
 
 check = true;  % Check marker for if the spline goes out of bounds (initialized as true so the loop will start)
 loop = 0;   % Loop number limiter
