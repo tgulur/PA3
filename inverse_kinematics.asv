@@ -6,6 +6,10 @@ close all
 % Get the user input
 % points = 5;
 points = input('Type in how many points you are entering: ');
+while(~isnumeric(points) || points <= 1)
+    fprintf("Invalid input!\n")
+    points = input('Type in how many points you are entering: ');
+end 
 
 % Open figure 1 for our user input 
 figure(1)
@@ -14,43 +18,46 @@ figure(1)
 x_num = zeros(points,1); 
 y_num = zeros(points,1);
 
-
+line_property = plot(0,0,'k.-');
 % Loop thru amount of inputs and store them
 for i = 1:points
     plot_circle(0,0,1);
     plot_circle(0,0,1.5);
+    
+    
     title(['Click  on ' num2str(points-i+1) ' points'])
     [x,y] = ginput(1);
 
-
+   
     x_num(i) = x;
     y_num(i) = y;
-    if (x_num(i) == 0 && y_num(i) == 0)
-        continue
-    else 
-        plot(x_num,y_num, 'Color', 'k')
-    end 
 
-    
+   
+    set(line_property, 'xdata', x_num(1:i), 'ydata', y_num(1:i));
+
+     
+
 end 
 
 % Convert the column vectors to a theta and rho that are defined in polar
 [theta,rho] = cart2pol(x_num, y_num);
 
-% figure(2)
-
-% Resulting curve returned
-curve_fit = awesome_curve_fit(theta,rho);
-
-
 
 
 figure(2)
-R = curve_fit(theta); 
 
-x_coord = [r*cos(theta)]
+% Resulting curve  function returned
+[T, R]  = awesome_curve_fit(theta,rho);
+plot(x_num, y_num);
+plot(R.*cos(T), R.*sin(T));
 
+plot_circle(0,0,1);
+plot_circle(0,0,1.5);
 
+ 
+
+% Getting radius values for the curve 
+% [j1, j2] =  spline_disc(T, R);
 
 
 
