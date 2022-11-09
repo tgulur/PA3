@@ -63,7 +63,7 @@ figure(2)
 plot(x_num, y_num);
 plot(R.*cos(T), R.*sin(T));
 
-plot_circle(0,0,1);
+plot_circle(0,0,0.5);
 plot_circle(0,0,1.5);
 
  
