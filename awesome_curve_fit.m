@@ -1,11 +1,11 @@
-function [curve_fit] = awesome_curve_fit(theta_data, R_data)
+function [theta, R] = awesome_curve_fit(theta_data, R_data)
 % Returns a curve fit for the inputed data that stays within the desired
 % operating range of the robot
 % 
 % Note on Input: Data must be inputed as equal sized column vectors
 %
-% Note on Output: Output is a function in polar coordinates, 
-%     ie. R = curve_fit(theta)
+% Note on Output: Output is a set of R & theta values that follows the
+% curve going through the inputed points
 
 % Define parameters 
 % (Independent of inputs, based on the specific robot in use)
@@ -104,5 +104,5 @@ while check && loop < 20
     % Increment loop counter
     loop = loop +1;
 end
-
+R = curve_fit(theta);
 end

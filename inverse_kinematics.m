@@ -40,11 +40,10 @@ end
 % figure(2)
 
 % Resulting curve  function returned
-curve_fit = awesome_curve_fit(theta,rho);
+[T, R]  = awesome_curve_fit(theta,rho);
 
 % Getting radius values for the curve 
-figure(2)
-R = curve_fit(theta); 
+ 
 
 % polarplot(theta,R)
 
