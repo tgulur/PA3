@@ -12,7 +12,7 @@ function [theta, R] = awesome_curve_fit(theta_data, R_data)
 L1 = 1;
 L2 = 0.5;
 
-r1 = L1;
+r1 = abs(L1-L2);
 r2 = L1+L2;
 
 % Find the number of elements
