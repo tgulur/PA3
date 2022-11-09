@@ -106,6 +106,6 @@ movie(F, 1, 100);
 % together and sending each other code, but we ended up using GitHub and
 % used GitHub desktop to keep track of changes, commits, and changes to
 % code so we can work on it in real time as well as make sure code
-% collisions wouldn't occur. Finally, we attempted to break the code up
+% collisions wouldn't occur (https://github.com/tgulur/PA3). Finally, we attempted to break the code up
 % more by utilizing MatLab functions to do the curve algorithm, circle
 % plotting, invesrse kinematics, and link plotting
